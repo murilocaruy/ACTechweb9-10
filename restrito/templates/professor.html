@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    <h1>Area do Professor</h1>
+
+    <h2>Turmas matriculadas</h2>
+    <a class="nav-link" href="{% url 'restrito:turma' %}">Turmas</a>
+    
+    <h2>Mensagens recebidas</h2>
+
+    <h2>Atividades pendentes</h2>
+    <a class="nav-link" href="{% url 'restrito:atividade' %}">Atividades</a>
+
+{% endblock  %}
