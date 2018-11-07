@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    {{ atual.sigla }}
+{% endblock %}
+
+{% block conteudo %}
+    <h1>{{ atual.nome }}</h1>
+    <p>{{ atual.descricao }}</p>
+    <p>Coordenador: {{ atual.coordenador }}</p>
+    <h2>Disciplinas:</h2>
+
+    <br>
+
+    <h4>Primeiro Semestre</h4>
+    {% for disciplinaOf in disciplinasOfertadas %}
+        {% if disciplinaOf.curso == atual and disciplinaOf.semestre == 'PRIMEIRO' %}
+        <p><a class="nav-link" href="{% url 'curriculo:disciplina' atual.sigla disciplinaOf.disciplina.abrev %}">{{ disciplinaOf.disciplina }}</a></p>
+        {% endif %}
+    {% endfor %}
+
+    <br>
+
+    <h4>Segundo Semestre</h4>
+    {% for disciplinaOf in disciplinasOfertadas %}
+        {% if disciplinaOf.curso == atual and disciplinaOf.semestre == 'SEGUNDO' %}
+        <p><a class="nav-link" href="{% url 'curriculo:disciplina' atual.sigla disciplinaOf.disciplina.abrev %}">{{ disciplinaOf.disciplina }}</a></p>
+        {% endif %}
+    {% endfor %}
+
+    <br>
+
+    <h4>Terceiro Semestre</h4>
+    {% for disciplinaOf in disciplinasOfertadas %}
+        {% if disciplinaOf.curso == atual and disciplinaOf.semestre == 'TERCEIRO' %}
+        <p><a class="nav-link" href="{% url 'curriculo:disciplina' atual.sigla disciplinaOf.disciplina.abrev %}">{{ disciplinaOf.disciplina }}</a></p>
+        {% endif %}
+    {% endfor %}
+
+    <br>
+
+    <h4>Quarto Semestre</h4>
+    {% for disciplinaOf in disciplinasOfertadas %}
+        {% if disciplinaOf.curso == atual and disciplinaOf.semestre == 'QUARTO' %}
+        <p><a class="nav-link" href="{% url 'curriculo:disciplina' atual.sigla disciplinaOf.disciplina.abrev %}">{{ disciplinaOf.disciplina }}</a></p>
+        {% endif %}
+    {% endfor %}
+
+
+{% endblock  %}

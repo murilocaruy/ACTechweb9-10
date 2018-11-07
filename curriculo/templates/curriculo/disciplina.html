@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    {{ detalhes.abrev }}
+{% endblock %}
+
+{% block conteudo %}
+    <h1>{{ detalhes.nome }}</h1>
+    <h3>Descrição:</h3>
+    <p>{{ detalhes.descricao }}</p>
+    <h3>Ementa:</h3>
+    <p>{{ detalhes.ementa }}</p>
+
+{% endblock  %}
