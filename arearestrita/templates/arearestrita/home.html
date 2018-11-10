@@ -10,6 +10,9 @@
 
     <h1>Área do Professor</h1>
 
+    <a role="button" href="{% url 'arearestrita:novaatividade' %}" class="btn btn-outline-success">Nova Atividade</a>
+    <a role="button" href="{% url 'arearestrita:vincularatividade' %}" class="btn btn-outline-success">Nova Atividade</a>
+
 {% elif user.tipo == 'A' %}
 
     <h1>Área do Aluno</h1>
